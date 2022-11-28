@@ -1,9 +1,9 @@
-from .models import Post
-from django.shortcuts import render
-from django.views.generic.list import ListView
-from django.views.generic.edit import UpdateView
 from django.db.models import Q, Case, When, Count
+from django.views.generic.edit import UpdateView
+from django.views.generic.list import ListView
 from categorias.models import Categoria
+from django.shortcuts import render
+from .models import Post
 
 class PostIndex(ListView):
     model = Post # indicando model
@@ -30,7 +30,7 @@ class PostIndex(ListView):
         return qs
 
 
-class PostBusca(ListView):
+class PostBusca(PostIndex):
     template_name = 'posts/post_busca.html'
 
     def get_queryset(self):
@@ -50,7 +50,7 @@ class PostBusca(ListView):
         return qs
 
 
-class PostCategoria(ListView):
+class PostCategoria(PostIndex):
     template_name = 'posts/post_categoria.html'
 
     def get_queryset(self):
