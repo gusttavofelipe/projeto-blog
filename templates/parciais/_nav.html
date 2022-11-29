@@ -12,7 +12,7 @@
 
                     {% for categoria in categorias %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}"> {{categoria.nome_cat}} </a>
+                        <a class="nav-link" href="{% url 'post_categoria' categoria.nome_cat %}"> {{categoria.nome_cat}} </a>
                     </li>
                     {% endfor %}    
 
@@ -25,4 +25,4 @@
         </div>
     </div>
 </nav>
-<!--/_nav.html-->
+<!--/_nav.html-->   
