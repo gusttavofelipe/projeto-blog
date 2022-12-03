@@ -8,10 +8,10 @@
         <div class="card">
 
             {% if post.imagem_post %}
-            <a href="{% url 'post_detalhes' post.id %}"> {% comment %} url de detalhes do post{% endcomment %}
+            <a href="{% url 'post_detalhes' post.id %}"> 
                 <img class="card-img-top"
-                    src="{{ post.imagem_post.url }}" {% comment %} imagem do post {% endcomment %}
-                    alt="{{ post.titulo_post }}"> {% comment %} titulo do post {% endcomment %}
+                    src="{{ post.imagem_post.url }}" 
+                    alt="{{ post.titulo_post }}"> 
             </a>
             {% endif %}
 
@@ -21,12 +21,12 @@
                         {{ post.titulo_post}}
                     </a>
                 </h5>
-                <p class="card-text">{{ post.excerto_post}}</p> {% comment %} excerto do post {% endcomment %}
+                <p class="card-text">{{ post.excerto_post}}</p> 
                 <p class="card-text">
                     <small class="text-muted">
-                        {{ post.data_post|naturalday|title }} {% comment %} data com humanize {% endcomment %}
-                        | {{ post.num_comentarios }} comentário(s) {% comment %} numero de comentarios {% endcomment %}
-                        | {{ post.categoria_post }}</small> {% comment %} categoria {% endcomment %}
+                        {{ post.data_post|naturalday|title }} 
+                        | {{ post.num_comentarios }} comentário(s)
+                        | {{ post.categoria_post }}</small> 
                 </p>
 
                 <div class="text-right">
