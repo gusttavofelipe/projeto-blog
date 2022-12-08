@@ -75,6 +75,16 @@ class PostDetalhes(UpdateView):
     form_class = FormComentario # formulario de detalhes do post
     context_object_name = 'post'
 
+    def get_context_data(self, **kwargs):
+        contexto = super().get_context_data(**kwargs)
+        post = self.get_object()  
+        comentarios = Comentario.objects.filter(
+            publicado_comentario=True, post_comentario=post.id)
+
+        contexto['comentarios'] = comentarios     
+
+        return contexto
+
     def form_valid(self, form):
         post = self.get_object()    
         comentario = Comentario(**form.cleaned_data)
