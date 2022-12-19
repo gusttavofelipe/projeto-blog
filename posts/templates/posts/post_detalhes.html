@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block titulo %} {{ post.titulo_post }} | {% endblock titulo %} 
 
@@ -67,13 +68,8 @@
             {% endfor %}
 
             {% for visible_field in form.visible_fields %}
-            <div class="form-group">
-                {{ visible_field.label_tag }} <br>
-                {{ visible_field }} <!--campos visiveis-->
-                {{ visible_field.errors }} <!-- mensagens de error-->
-            </div>
+                {{ visible_field|as_crispy_field }} <!--campos visiveis-->
             {% endfor %}
-
 
             {% include 'parciais/_messages.html' %}
             <input id="envia_comentario" type="submit" class="btn btn-primary"
