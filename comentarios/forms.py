@@ -36,4 +36,4 @@ class FormComentario(ModelForm): # formulario de detalhes do post
 
     class Meta:
         model = Comentario
-        fields = ('nome_comentario', 'email_comentario', 'comentario', 'usuario_comentario',)
+        fields = ('nome_comentario', 'email_comentario', 'comentario', )
